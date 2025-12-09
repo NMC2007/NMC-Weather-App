@@ -10,8 +10,8 @@
         "axios": "^1.13.2",
         "classnames": "^2.5.1",
         "normalize.css": "^8.0.1",
-        "react": "^19.2.0",
-        "react-dom": "^19.2.0",
+        "react": "^19.2.1",
+        "react-dom": "^19.2.1",
         "react-scripts": "5.0.1",
         "web-vitals": "^2.1.4"
     },
