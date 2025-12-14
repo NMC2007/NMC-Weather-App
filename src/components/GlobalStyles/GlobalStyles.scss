@@ -11,7 +11,13 @@
     padding: 0;
 }
 
-html {
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+
     font-size: 62.5%;
     line-height: 1.5;
 }
@@ -20,13 +26,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.6rem;
     text-rendering: optimizeLegibility;
-
-    margin: 0;
-    height: 100vh;
-    background: linear-gradient(150deg, #2b3c5c 0%, #8d6c98 35%, #c884a7 55%, #df9fbb 75%, #f3d0df 100%);
-
+    background-image: url('../Image/BGRImage.png');
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 button,

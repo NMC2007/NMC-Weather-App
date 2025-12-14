@@ -1,6 +1,7 @@
 // import { useState, useEffect } from 'react';
 
 // import { Wrapper } from './components/Wrapper';
+import Wrapper from './components/Wrapper';
 import DefaultLayout from './layouts';
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
     return (
         <div className="App">
             <DefaultLayout>
-                Hello
+                <Wrapper>Hello</Wrapper>
             </DefaultLayout>
         </div>
     );
