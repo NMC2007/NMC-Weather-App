@@ -5,8 +5,8 @@ import style from './Wrapper.mdule.scss';
 
 const cx = classNames.bind(style);
 
-function Wrapper({ children, className }) {
-    return <div className={cx('wrapper', className)}>{children}</div>;
+function Wrapper({ children, className, transparent }) {
+    return <div className={cx('wrapper', className, {transparent})}>{children}</div>;
 }
 
 Wrapper.propTypes = {

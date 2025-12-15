@@ -1,7 +1,7 @@
 // import { useState, useEffect } from 'react';
 
-// import { Wrapper } from './components/Wrapper';
 import Wrapper from './components/Wrapper';
+// import Wrapper from './components/Wrapper';
 import DefaultLayout from './layouts';
 
 function App() {
@@ -24,6 +24,8 @@ function App() {
         <div className="App">
             <DefaultLayout>
                 <Wrapper>Hello</Wrapper>
+                {/* left content */}
+                {/* right content */}
             </DefaultLayout>
         </div>
     );
