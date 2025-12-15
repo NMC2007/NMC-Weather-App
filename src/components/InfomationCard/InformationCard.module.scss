@@ -1,0 +1,42 @@
+.Wrapper {
+    width: 425px;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.Wrapper-content {
+    justify-content: space-between;
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    // border: 1px solid red;
+}
+.card-title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.icon {
+    font-size: 1.7rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+.card-value {
+    font-size: 3.5rem; /* Kích thước lớn cho giá trị (4, 12 km/h, 65%) */
+    font-weight: 500;
+    color: var(--default-width-layout);
+    margin: 0;
+    line-height: 1.1;
+}
+.card-subtext {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 5px;
+    margin-bottom: 0;
+}

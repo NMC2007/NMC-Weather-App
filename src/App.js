@@ -1,6 +1,7 @@
 // import { useState, useEffect } from 'react';
 
-import Wrapper from './components/Wrapper';
+import InformationCard from './components/InfomationCard/InformationCard';
+// import Wrapper from './components/Wrapper';
 // import Wrapper from './components/Wrapper';
 import DefaultLayout from './layouts';
 
@@ -23,8 +24,7 @@ function App() {
     return (
         <div className="App">
             <DefaultLayout>
-                <Wrapper>Hello</Wrapper>
-                {/* left content */}
+                <InformationCard />
                 {/* right content */}
             </DefaultLayout>
         </div>
