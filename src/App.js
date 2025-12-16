@@ -1,6 +1,6 @@
 // import { useState, useEffect } from 'react';
 
-import InformationCard from './components/InfomationCard/InformationCard';
+// import InformationCard from './components/InfomationCard/InformationCard';
 // import Wrapper from './components/Wrapper';
 // import Wrapper from './components/Wrapper';
 import DefaultLayout from './layouts';
@@ -23,9 +23,7 @@ function App() {
 
     return (
         <div className="App">
-            <DefaultLayout>
-                <InformationCard />
-                {/* right content */}
+            <DefaultLayout>        
             </DefaultLayout>
         </div>
     );

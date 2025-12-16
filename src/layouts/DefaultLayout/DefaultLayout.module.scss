@@ -18,14 +18,17 @@
     // border: 1px solid red;
 }
 
-.Wrapper-left-content {
-    border: 1px solid red;
-    min-height: 300px;
-}
-
+.Wrapper-left-content,
 .Wrapper-right-content {
+    display: flex;
+    flex-direction: column;
     border: 1px solid red;
-    min-height: 300px;
+}
+.wrapper-card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 @media (max-width: 768px) {
