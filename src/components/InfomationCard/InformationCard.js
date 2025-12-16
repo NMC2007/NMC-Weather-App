@@ -11,10 +11,10 @@ function InformationCard() {
     return (
         <div className={cx('Wrapper')}>
             <Wrapper className={cx('Wrapper-content')}>
-                <div className={cx('card-header')}>
+                <header className={cx('card-header')}>
                     <span className={cx('card-title')}>UV INDEX</span>
                     <FontAwesomeIcon className={cx('icon')} icon={faSun} />
-                </div>
+                </header>
                 <div className={cx('card-content')}>
                     <h2 className={cx('card-value')}>4</h2>
                     <p className={cx('card-subtext')}>Moderate</p>

@@ -11,14 +11,31 @@
     width: 100%;
 }
 .wrapper-content .content {
-    /* Sử dụng CSS Grid để chia cột */
-    display: grid; 
-    
-    /* Thiết lập 2 cột: Cột trái (lớn) chiếm 2 phần, cột phải (nhỏ) chiếm 1 phần */
-    grid-template-columns: 3fr 2fr; 
-    
-    /* Khoảng cách giữa các cột và hàng */
+    display: grid;
+    grid-template-columns: 3fr 2fr;
     gap: 30px;
-    padding: 0 25px;
     width: var(--default-width-layout);
+    // border: 1px solid red;
+}
+
+.Wrapper-left-content {
+    border: 1px solid red;
+    min-height: 300px;
+}
+
+.Wrapper-right-content {
+    border: 1px solid red;
+    min-height: 300px;
+}
+
+@media (max-width: 768px) {
+    .wrapper-content .content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .left-content,
+    .right-content {
+        grid-column: 1 / -1;
+    }
 }
