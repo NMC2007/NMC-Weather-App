@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import style from './DefaultLayout.module.scss';
@@ -8,7 +7,8 @@ import LeftContent from './LeftContent';
 import RightContent from './RightContent';
 import MainInformation from '../components/MainInformation';
 import InfomationCard from '~/components/InfomationCard';
-// import Wrapper from '~/components/Wrapper';
+
+// nhận api
 
 const cx = classNames.bind(style);
 

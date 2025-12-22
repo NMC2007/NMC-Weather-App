@@ -32,14 +32,13 @@ function MainInformation() {
                         </div>
                     </div>
 
-                    {/* Cột bên phải: Trạng thái */}
                     <div className={cx('status')}>
                         <div className={cx('wrapper-icon')}>
                             <Wrapper className={cx('icon-circle')}>
                                 <FontAwesomeIcon icon={faCloud} className={cx('icon-weather')} />
                             </Wrapper>
                         </div>
-                        <h3 className={cx('status-text')}>mây cụm</h3>
+                        <h3 className={cx('status-text')}>bầu trời quang đãng</h3>
                     </div>
                 </div>
             </Wrapper>
