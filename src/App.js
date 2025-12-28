@@ -23,8 +23,7 @@ function App() {
 
     return (
         <div className="App">
-            <DefaultLayout>        
-            </DefaultLayout>
+            <DefaultLayout/>
         </div>
     );
 }
