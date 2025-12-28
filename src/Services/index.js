@@ -1,4 +1,1 @@
-/**
- * call api bên này
- * 
-*/
+export * from './Request';

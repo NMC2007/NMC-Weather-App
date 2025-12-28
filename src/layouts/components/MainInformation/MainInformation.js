@@ -7,13 +7,24 @@ import style from './MainInformation.module.scss';
 
 const cx = classNames.bind(style);
 
-function MainInformation({ description = '', icon, temp = 0, feels_like = 0, temp_min = 0, temp_max = 0 }) {
+function MainInformation({
+    city = '',
+    country = '',
+    description = '',
+    icon,
+    temp = 0,
+    feels_like = 0,
+    temp_min = 0,
+    temp_max = 0,
+}) {
     return (
         <div className={cx('Wrapper')}>
             <Wrapper transparent className={cx('Wrapper-content')}>
                 <header className={cx('main-header')}>
                     <FontAwesomeIcon icon={faLocationDot} className={cx('icon-location')} />
-                    <span>Hanoi, Vietnam</span>
+                    <span>
+                        {city}, {country}
+                    </span>
                 </header>
 
                 <div className={cx('body')}>
