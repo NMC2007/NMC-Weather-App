@@ -7,16 +7,16 @@ import { faSun } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(style);
 
-function InformationCard() {
+function InformationCard({ title = 'Thông tin', data = '0' }) {
     return (
         <div className={cx('Wrapper')}>
             <Wrapper className={cx('Wrapper-content')}>
                 <header className={cx('card-header')}>
-                    <span className={cx('card-title')}>UV INDEX</span>
+                    <span className={cx('card-title')}>{title}</span>
                     <FontAwesomeIcon className={cx('icon')} icon={faSun} />
                 </header>
                 <div className={cx('card-content')}>
-                    <h2 className={cx('card-value')}>4</h2>
+                    <h2 className={cx('card-value')}>{data}</h2>
                     <p className={cx('card-subtext')}>Moderate</p>
                 </div>
             </Wrapper>
