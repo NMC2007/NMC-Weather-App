@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind';
-import { useEffect, useState } from 'react';
 
 import style from './DefaultLayout.module.scss';
 import Header from '../components/Header';
@@ -7,26 +6,15 @@ import LeftContent from './LeftContent';
 import RightContent from './RightContent';
 import MainInformation from '../components/MainInformation';
 import InfomationCard from '~/components/InfomationCard';
+import WeatherContext from '~/context';
 
-import { data as APIdata } from '~/Services';
 
-// import { fetchWeatherAPI } from '~/apis';
 
 // nhận api
 
 const cx = classNames.bind(style);
 
 function DefaultLayout() {
-    const [data, setData] = useState({});
-
-    useEffect(() => {
-        APIdata.then((data) => {
-            setData(data);
-        });
-    }, []);
-
-    console.log(data);
-
     return (
         <div className={cx('wrapper')}>
             <Header />
@@ -34,24 +22,17 @@ function DefaultLayout() {
                 <div className={cx('content')}>
                     {/* Cột trái: Thông tin chính + Lưới các thẻ nhỏ */}
                     <LeftContent>
-                        <MainInformation
-                            city={data.city}
-                            country={data.country}
-                            description={data.description}
-                            icon
-                            temp={data.temp}
-                            feels_like={data.feelsLike}
-                            temp_min={data.tempMin}
-                            temp_max={data.tempMax}
-                        />
-                        <div className={cx('wrapper-card')}>
-                            <InfomationCard type="uv" />
-                            <InfomationCard type="wind" />
-                            <InfomationCard type="humidity" />
-                            <InfomationCard type="visibility" />
-                            <InfomationCard type="pressure" />
-                            <InfomationCard type="feels-like" />
-                        </div>
+                        <WeatherContext>
+                            <MainInformation />
+                            <div className={cx('wrapper-card')}>
+                                <InfomationCard type="uv" />
+                                <InfomationCard type="wind" />
+                                <InfomationCard type="humidity" />
+                                <InfomationCard type="visibility" />
+                                <InfomationCard type="pressure" />
+                                <InfomationCard type="feels-like" />
+                            </div>
+                        </WeatherContext>
                     </LeftContent>
 
                     {/* Cột phải: Dự báo theo giờ và theo ngày */}

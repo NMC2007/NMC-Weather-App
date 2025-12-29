@@ -1,1 +1,1 @@
-export * from './ResponseAPI';
+export * from './responseAPI';

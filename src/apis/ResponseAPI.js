@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { API_ROOT } from '~/utils/request';
+import { API_ROOT } from '~/utils/rootAPI';
 
 // thăng path này sẽ nhận vào các thông số động như lat, lon, api key, ...
 
@@ -12,7 +12,17 @@ import { API_ROOT } from '~/utils/request';
 export const fetchWeatherAPI = async (path) => {
     try {
         const response = await axios.get(
-            `${API_ROOT}/data/2.5/weather?lat=21.028511&lon=105.804817&appid=${path}&lang=vi&units=metric`,
+            // ?lat=21.028511&lon=105.804817&appid=${path}&lang=vi&units=metric
+            `${API_ROOT}/data/2.5/weather`,
+            {
+                params: {
+                    lat: 21.028511,
+                    lon: 105.804817,
+                    appid: path,
+                    lang: 'vi',
+                    units: 'metric',
+                },
+            },
         );
         return response.data;
     } catch (error) {
