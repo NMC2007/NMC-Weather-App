@@ -4,9 +4,9 @@
 
     color: var(--default-text-color);
 
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.152);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 
     z-index: 1;
@@ -15,6 +15,10 @@
     height: 100%;
     padding: 10px;
     border-radius: 10px;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.24);
+    }
 }
 
 .transparent {
@@ -22,4 +26,7 @@
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
     border: none;
+    &:hover {
+        background: transparent;
+    }
 }

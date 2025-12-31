@@ -8,8 +8,6 @@ function BodyInformation() {
     // nếu tồn tại context thì cardInformation = context.cardInformation
     const cardInformations = context?.cardInformation;
 
-    console.log(cardInformations);
-
     return (
         cardInformations && (
             <>

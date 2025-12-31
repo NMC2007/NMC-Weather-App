@@ -16,8 +16,6 @@ function MainInformation() {
     // nếu tồn tại context thì mainWeatherData = context.main
     const mainWeatherData = context?.main;
 
-    console.log(mainWeatherData);
-
     return (
         <div className={cx('Wrapper')}>
             <Wrapper transparent className={cx('Wrapper-content')}>
