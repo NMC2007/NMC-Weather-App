@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faArrowUp, faArrowDown, faCloud } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 import { useContext } from 'react';
 import { WeatherContext } from '~/context';
@@ -43,11 +43,13 @@ function MainInformation() {
                     </div>
 
                     <div className={cx('status')}>
-                        <div className={cx('wrapper-icon')}>
-                            <Wrapper className={cx('icon-circle')}>
-                                <FontAwesomeIcon icon={faCloud} className={cx('icon-weather')} />
-                            </Wrapper>
-                        </div>
+                        <Wrapper className={cx('icon-circle')}>
+                            <img
+                                className={cx('img-icon')}
+                                src={`https://openweathermap.org/img/wn/${mainWeatherData?.icon}@2x.png`}
+                                alt="Weather icon"
+                            />
+                        </Wrapper>
                         <h3 className={cx('status-text')}>{mainWeatherData?.description}</h3>
                     </div>
                 </div>
