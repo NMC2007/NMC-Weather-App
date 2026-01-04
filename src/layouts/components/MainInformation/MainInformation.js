@@ -11,10 +11,10 @@ import style from './MainInformation.module.scss';
 const cx = classNames.bind(style);
 
 function MainInformation() {
-    const context = useContext(WeatherContext);
+    const { dataWeather } = useContext(WeatherContext);
 
     // nếu tồn tại context thì mainWeatherData = context.main
-    const mainWeatherData = context?.main;
+    const mainWeatherData = dataWeather?.main;
 
     return (
         <div className={cx('Wrapper')}>

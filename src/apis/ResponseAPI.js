@@ -2,14 +2,12 @@ import axios from 'axios';
 
 import { API_ROOT } from '~/utils/rootAPI';
 
-// thăng path này sẽ nhận vào các thông số động như lat, lon, api key, ...
-
 /**
  * sau này đối với những dự án lớn
  * có thể dùng Interceptors của axios để bắt lỗi tập trùng cho nhiều response chứ
  * không cần dùng try catch
  */
-export const fetchWeatherAPI = async (path) => {
+export const fetchWeatherAPI = async (path, cityName) => {
     try {
         const response = await axios.get(
             // ?lat=21.028511&lon=105.804817&appid=${path}&lang=vi&units=metric
@@ -19,7 +17,7 @@ export const fetchWeatherAPI = async (path) => {
                 params: {
                     // lat: 21.028511,
                     // lon: 105.804817,
-                    q: 'Hà Nội',
+                    q: cityName,
                     appid: path,
                     lang: 'vi',
                     units: 'metric',

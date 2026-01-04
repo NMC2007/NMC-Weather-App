@@ -1,20 +1,9 @@
-import { fetchWeatherAPI } from '~/apis';
-
-// cần thiết thì tách ra file riêng để xử lý độ
 function degToDirection(deg) {
     const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
     return directions[Math.round(deg / 45) % 8];
 }
 
-// path mặc định
-const path = 'c385bf013ab54351d57c2493b91862b4';
-
-// thành phố mặc định
-const cityName = 'Hà Nội';
-
-// gọi api
-export const data = fetchWeatherAPI(path, cityName).then((data) => {
-    // làm sạch api và trả về một obj mới chứa các phần tử cần thiết
+export const adapter = (data) => {
     return {
         /* ====== Thông tin chính (Header + Main card) ====== */
         main: {
@@ -79,4 +68,4 @@ export const data = fetchWeatherAPI(path, cityName).then((data) => {
             },
         ],
     };
-});
+};

@@ -3,10 +3,10 @@ import InfomationCard from '~/components/InfomationCard';
 import { WeatherContext } from '~/context';
 
 function BodyInformation() {
-    const context = useContext(WeatherContext);
+    const { dataWeather } = useContext(WeatherContext);
 
     // nếu tồn tại context thì cardInformation = context.cardInformation
-    const cardInformations = context?.cardInformation;
+    const cardInformations = dataWeather?.cardInformation;
 
     return (
         cardInformations && (
