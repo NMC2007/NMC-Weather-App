@@ -36,7 +36,7 @@ export const data = fetchWeatherAPI(path).then((data) => {
                 parameter: Math.round(data.wind.speed * 3.6), // m/s → km/h
                 measurement: ' km/h',
                 icon: 'faWind',
-                windDirection: degToDirection(data.wind.deg),
+                suggest: 'Hướng gió ' + degToDirection(data.wind.deg),
             },
 
             {

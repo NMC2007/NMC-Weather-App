@@ -18,6 +18,7 @@ function BodyInformation() {
                         parameter={cardInformation.parameter}
                         icon={cardInformation.icon}
                         measurement={cardInformation.measurement}
+                        suggest={cardInformation.suggest}
                     />
                 ))}
             </>

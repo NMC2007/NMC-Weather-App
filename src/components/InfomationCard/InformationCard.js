@@ -7,7 +7,7 @@ import { faDroplet, faEye, faGauge, faSun, faTemperatureHigh, faWind } from '@fo
 
 const cx = classNames.bind(style);
 
-function InformationCard({ title = 'Thông tin', parameter = '0', icon, measurement = '' }) {
+function InformationCard({ title = 'Thông tin', parameter = '0', icon, measurement = '', suggest = 'Không có gợi ý'}) {
     var Icon;
 
     switch (icon) {
@@ -48,7 +48,7 @@ function InformationCard({ title = 'Thông tin', parameter = '0', icon, measurem
                         {parameter}
                         {measurement}
                     </h2>
-                    <p className={cx('card-subtext')}>Moderate</p>
+                    <p className={cx('card-subtext')}>{suggest}</p>
                 </div>
             </Wrapper>
         </div>
