@@ -12,8 +12,6 @@ function Search() {
     const { setCityName } = useContext(WeatherContext);
     const [value, setValue] = useState('');
 
-    // console.log(setCityName);
-
     const handleSearch = () => {
         if (!value.trim()) return;
         setCityName(value);

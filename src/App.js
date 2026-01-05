@@ -1,10 +1,13 @@
+import ProviderWeatherData from './context/weatherContext';
 import DefaultLayout from './layouts';
 
 function App() {
     return (
-        <div className="App">
-            <DefaultLayout />
-        </div>
+        <ProviderWeatherData>
+            <div className="App">
+                <DefaultLayout />
+            </div>
+        </ProviderWeatherData>
     );
 }
 
