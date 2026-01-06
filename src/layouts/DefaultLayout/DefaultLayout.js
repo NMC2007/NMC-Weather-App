@@ -10,7 +10,6 @@ import BodyInformation from '../components/BodyInformation';
 const cx = classNames.bind(style);
 
 function DefaultLayout() {
-    console.log('Re-render default');
     return (
         <div className={cx('wrapper')}>
             <Header />

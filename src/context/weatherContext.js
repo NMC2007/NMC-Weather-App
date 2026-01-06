@@ -1,13 +1,14 @@
 import { useEffect, useState, createContext } from 'react';
 // import { data as APIdata } from '~/Services';
 
-import { fetchWeatherAPI } from '~/apis';
-import { adapter } from '~/Services/adapter';
+import { fetchWeatherAPI, fetchForecastAPI } from '~/apis';
+import { adapterWtData, adapterForecast } from '~/Services/adapter';
 
 export const WeatherContext = createContext();
 
 function ProviderWeatherData({ children }) {
     const [dataWeather, setDataWeather] = useState({});
+    const [dataForecast, setDataForecast] = useState({});
     const [cityName, setCityName] = useState('Ha noi');
 
     const path = 'c385bf013ab54351d57c2493b91862b4';
@@ -17,10 +18,19 @@ function ProviderWeatherData({ children }) {
 
         // func gọi api và truyền vào key và tên thành phố
         const getWeather = () => {
+            // gọi api nhận về weather data trong ngày
             fetchWeatherAPI(path, cityName).then((data) => {
-                const wtData = adapter(data);
+                const wtData = adapterWtData(data);
                 if (isMounted) {
                     setDataWeather({ ...wtData });
+                }
+            });
+
+            // gọi api dự báo
+            fetchForecastAPI(path, cityName).then((data) => {
+                const FcData = adapterForecast(data);
+                if (isMounted) {
+                    setDataForecast([...FcData]);
                 }
             });
         };
@@ -37,7 +47,13 @@ function ProviderWeatherData({ children }) {
         };
     }, [cityName]);
 
-    return <WeatherContext.Provider value={{ cityName, setCityName, dataWeather }}>{children}</WeatherContext.Provider>;
+    console.log(dataForecast);
+
+    return (
+        <WeatherContext.Provider value={{ cityName, setCityName, dataWeather, dataForecast }}>
+            {children}
+        </WeatherContext.Provider>
+    );
 }
 
 export default ProviderWeatherData;

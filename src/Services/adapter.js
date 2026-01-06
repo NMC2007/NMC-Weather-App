@@ -3,7 +3,8 @@ function degToDirection(deg) {
     return directions[Math.round(deg / 45) % 8];
 }
 
-export const adapter = (data) => {
+// làm sạch api data trong ngày
+export const adapterWtData = (data) => {
     return {
         /* ====== Thông tin chính (Header + Main card) ====== */
         main: {
@@ -68,4 +69,19 @@ export const adapter = (data) => {
             },
         ],
     };
+};
+
+// làm sạch api data dự báo
+export const adapterForecast = (data) => {
+    return data.list.map((item) => {
+        // tách ngày vs giờ
+        const [date, time] = item.dt_txt.split(' ');
+
+        return {
+            date,
+            time: time.slice(0, 5),
+            icon: item.weather?.[0]?.icon,
+            temp: Math.round(item.main.temp),
+        };
+    });
 };

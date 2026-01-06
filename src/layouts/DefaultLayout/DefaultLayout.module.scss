@@ -56,15 +56,6 @@
         margin-bottom: 10px;
         font-weight: 500;
     }
-
-    // Chỉnh chiều cao cho giống ảnh
-    &.hourly-forecast {
-        height: 180px;
-    }
-    &.daily-forecast {
-        flex: 1; // Tự giãn chiều cao hết phần còn lại
-        min-height: 400px;
-    }
 }
 
 // ==========================================
