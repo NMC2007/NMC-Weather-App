@@ -21,11 +21,19 @@ function HourlyForecast() {
             <h3 className={cx('title')}>Hourly Forecast</h3>
 
             <div className={cx('list')}>
-                <div className={cx('item')}>
-                    <span className={cx('time')}>Now</span>
-
-                    <span className={cx('temp')}>24°</span>
-                </div>
+                {dataForecast.map((item, index) => {
+                    return (
+                        <div key={index} className={cx('item')}>
+                            <span className={cx('time')}>{item.time}</span>
+                            <img
+                                className={cx('img-icon')}
+                                src={`https://openweathermap.org/img/wn/${item.icon}@2x.png`}
+                                alt="Weather icon"
+                            />
+                            <span className={cx('temp')}>{item.temp}°</span>
+                        </div>
+                    );
+                })}
             </div>
         </Wrapper>
     );

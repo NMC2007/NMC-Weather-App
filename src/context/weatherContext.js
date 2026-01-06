@@ -8,7 +8,7 @@ export const WeatherContext = createContext();
 
 function ProviderWeatherData({ children }) {
     const [dataWeather, setDataWeather] = useState({});
-    const [dataForecast, setDataForecast] = useState({});
+    const [dataForecast, setDataForecast] = useState([]);
     const [cityName, setCityName] = useState('Ha noi');
 
     const path = 'c385bf013ab54351d57c2493b91862b4';
