@@ -47,8 +47,6 @@ function ProviderWeatherData({ children }) {
         };
     }, [cityName]);
 
-    console.log(dataForecast);
-
     return (
         <WeatherContext.Provider value={{ cityName, setCityName, dataWeather, dataForecast }}>
             {children}
