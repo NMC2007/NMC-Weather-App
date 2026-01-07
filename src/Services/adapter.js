@@ -73,7 +73,11 @@ export const adapterWtData = (data) => {
 
 // làm sạch api data dự báo
 export const adapterForecast = (data) => {
-    return data.list.map((item) => {
+    /**
+     * .slice để cắt mảng mới từ phần từ số 0 đến 7 để lấy ra 7 item
+     * .map để trả về api đã làm sạch
+     */
+    return data.list.slice(0, 8).map((item) => {
         // tách ngày vs giờ
         const [date, time] = item.dt_txt.split(' ');
 

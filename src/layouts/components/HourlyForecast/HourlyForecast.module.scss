@@ -1,26 +1,32 @@
 .container {
+    min-height: 200px;
     display: grid;
-    padding: 16px;
+    padding: 25px;
+    &:hover {
+        background: rgba(255, 255, 255, 0.152);
+    }
 }
 
 .title {
-    font-size: 15px;
+    font-size: 1.7rem;
     font-weight: 600;
-    color: #fff;
-    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .list {
     max-width: 100%;
     overflow-x: auto;
     display: flex;
-    gap: 10px;
-    padding-bottom: 6px;
+    gap: 14px;
+    margin-top: 10px;
+    padding-bottom: 10px;
 
     overflow-x: auto;
 
     &::-webkit-scrollbar {
-        height: 4px;
+        height: 6px;
     }
 
     &::-webkit-scrollbar-thumb {
@@ -30,24 +36,26 @@
 }
 
 .item {
-    // border: 1px solid red;
-    min-width: 60px;
+    min-width: 85px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 7px;
     color: #fff;
 }
 
 .time {
-    font-size: 12px;
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
     opacity: 0.8;
 }
 .img-icon {
-    width: 30px;
-    height: 30px;
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
 }
 .temp {
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 600;
 }
