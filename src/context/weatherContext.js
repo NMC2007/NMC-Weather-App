@@ -1,5 +1,4 @@
 import { useEffect, useState, createContext } from 'react';
-// import { data as APIdata } from '~/Services';
 
 import { fetchWeatherAPI, fetchForecastAPI } from '~/apis';
 import { adapterWtData, adapterForecast } from '~/Services/adapter';

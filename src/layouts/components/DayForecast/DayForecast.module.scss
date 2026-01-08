@@ -1,0 +1,78 @@
+.container {
+    min-height: 200px;
+    display: grid;
+    padding: 25px;
+    &:hover {
+        background: rgba(255, 255, 255, 0.152);
+    }
+}
+
+.title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.item {
+    min-height: 40px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    transition: background 0.35s ease, transform 0.25s ease;
+    &:hover {
+        background: rgba(255, 255, 255, 0.125);
+    }
+}
+
+.day {
+    min-width: 100px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.weather {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.desc {
+    font-size: 1.5rem;
+    opacity: 0.85;
+}
+
+.temp {
+    min-width: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.min {
+    opacity: 0.7;
+}
+
+.max {
+    font-weight: 600;
+}

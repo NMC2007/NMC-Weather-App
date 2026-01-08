@@ -32,13 +32,16 @@ function MainInformation() {
                         <h1 className={cx('temp-main')}>{mainWeatherData?.temp}°</h1>
                         <div className={cx('temp-detail')}>
                             <p className={cx('range')}>
+                                {/* nhiệt độ cao nhất */}
                                 <FontAwesomeIcon icon={faArrowUp} className={cx('icon-arrow')} />
-                                <span className={cx('temp-value')}>{mainWeatherData?.feelsLike}°</span>
+                                <span className={cx('temp-value')}>{mainWeatherData?.tempMax}°</span>
+
+                                {/* nhiệt độ thấp nhất */}
                                 <FontAwesomeIcon icon={faArrowDown} className={cx('icon-arrow')} />
                                 <span className={cx('temp-value')}>{mainWeatherData?.tempMin}°</span>
                             </p>
                             <span className={cx('divider')}></span>
-                            <p className={cx('feels-like')}>Cảm giác {mainWeatherData?.tempMax}°</p>
+                            <p className={cx('feels-like')}>Cảm giác {mainWeatherData?.feelsLike}°</p>
                         </div>
                     </div>
 

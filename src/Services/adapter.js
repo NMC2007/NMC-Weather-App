@@ -25,7 +25,7 @@ export const adapterWtData = (data) => {
             {
                 // 1️⃣ WIND
                 // UI: "12 km/h" + "Direction NW"
-                title: 'Wind',
+                title: 'Gió',
                 parameter: Math.round(data.wind.speed * 3.6), // m/s → km/h
                 measurement: ' km/h',
                 icon: 'faWind',
@@ -35,7 +35,7 @@ export const adapterWtData = (data) => {
             {
                 // 2️⃣ HUMIDITY
                 // UI: "65%"
-                title: 'Humidity',
+                title: 'Độ ẩm',
                 measurement: '%',
                 icon: 'faDroplet',
                 parameter: data.main.humidity,
@@ -44,7 +44,7 @@ export const adapterWtData = (data) => {
             {
                 // 3️⃣ VISIBILITY
                 // UI: "10 km"
-                title: 'Visibility',
+                title: 'Tầm nhìn',
                 measurement: ' km',
                 icon: 'faEye',
                 parameter: data.visibility / 1000, // m → km
@@ -53,7 +53,7 @@ export const adapterWtData = (data) => {
             {
                 // 4️⃣ PRESSURE
                 // UI: "1012 hPa"
-                title: 'Pressure',
+                title: 'Áp suất',
                 measurement: ' hPa',
                 icon: 'faGauge',
                 parameter: data.main.pressure,
@@ -62,7 +62,7 @@ export const adapterWtData = (data) => {
             {
                 // 5️⃣ FEELS LIKE (card riêng)
                 // UI: "26°"
-                title: 'Feels Like',
+                title: 'Cảm giác',
                 measurement: '°',
                 icon: 'faTemperatureHigh',
                 parameter: Math.round(data.main.feels_like),
@@ -73,16 +73,13 @@ export const adapterWtData = (data) => {
 
 // làm sạch api data dự báo
 export const adapterForecast = (data) => {
-    /**
-     * .slice để cắt mảng mới từ phần từ số 0 đến 7 để lấy ra 7 item
-     * .map để trả về api đã làm sạch
-     */
-    return data.list.slice(0, 8).map((item) => {
+    return data.list.map((item) => {
         // tách ngày vs giờ
         const [date, time] = item.dt_txt.split(' ');
 
         return {
             date,
+            description: item.weather?.[0]?.description,
             time: time.slice(0, 5),
             icon: item.weather?.[0]?.icon,
             temp: Math.round(item.main.temp),

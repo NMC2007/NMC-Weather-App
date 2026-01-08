@@ -7,6 +7,7 @@ import RightContent from './RightContent';
 import MainInformation from '../components/MainInformation';
 import BodyInformation from '../components/BodyInformation';
 import HourlyForecast from '../components/HourlyForecast';
+import DayForecast from '../components/DayForecast';
 
 const cx = classNames.bind(style);
 
@@ -25,17 +26,11 @@ function DefaultLayout() {
 
                     {/* Cột phải: Dự báo theo giờ và theo ngày */}
                     <RightContent>
-                        {/* Placeholder 1: Hourly Forecast */}
                         <div className={cx('placeholder-card')}>
-                            {/* <h3>Hourly Forecast</h3>
-                            <p>(Component chưa viết)</p> */}
                             <HourlyForecast />
                         </div>
-
-                        {/* Placeholder 2: 7-Day Forecast */}
                         <div className={cx('placeholder-card')}>
-                            <h3>7-Day Forecast</h3>
-                            <p>(Component chưa viết)</p>
+                            <DayForecast />
                         </div>
                     </RightContent>
                 </div>

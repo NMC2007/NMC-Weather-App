@@ -17,6 +17,12 @@ function Search() {
         setCityName(value);
     };
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
+    };
+
     return (
         <div className={cx('search')}>
             <input
@@ -24,6 +30,7 @@ function Search() {
                 placeholder="Nhập tên thành phố..."
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
+                onKeyDown={handleKeyDown}
             />
             <button className={cx('search-btn')}>
                 <FontAwesomeIcon onClick={handleSearch} className={cx('search-icon')} icon={faMagnifyingGlass} />

@@ -10,17 +10,16 @@ const cx = classNames.bind(Style);
 function HourlyForecast() {
     const { dataForecast } = useContext(WeatherContext);
 
-
     // xử lý lọc ra các ngày trùng nhau
     // lưu thành một Arr
     // map theo arr -> render
 
     return (
         <Wrapper className={cx('container')}>
-            <span className={cx('title')}>Hourly Forecast</span>
+            <span className={cx('title')}>Dự báo theo giờ</span>
 
             <div className={cx('list')}>
-                {dataForecast.map((item, index) => {
+                {dataForecast.slice(0, 8).map((item, index) => {
                     return (
                         <div key={index} className={cx('item')}>
                             <span className={cx('time')}>{item.time}</span>
