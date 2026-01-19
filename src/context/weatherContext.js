@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState, createContext } from 'react';
 
 import { fetchWeatherAPI, fetchForecastAPI } from '~/apis';
@@ -65,5 +66,9 @@ function ProviderWeatherData({ children }) {
         </WeatherContext.Provider>
     );
 }
+
+ProviderWeatherData.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
 export default ProviderWeatherData;

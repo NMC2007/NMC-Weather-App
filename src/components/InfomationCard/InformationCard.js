@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import style from './InformationCard.module.scss';
@@ -7,7 +8,7 @@ import { faDroplet, faEye, faGauge, faSun, faTemperatureHigh, faWind } from '@fo
 
 const cx = classNames.bind(style);
 
-function InformationCard({ title = 'Thông tin', parameter = '0', icon, measurement = '', suggest = 'Không có gợi ý'}) {
+function InformationCard({ title = 'Thông tin', parameter = '0', icon, measurement = '', suggest = 'Không có gợi ý' }) {
     var Icon;
 
     switch (icon) {
@@ -54,5 +55,13 @@ function InformationCard({ title = 'Thông tin', parameter = '0', icon, measurem
         </div>
     );
 }
+
+InformationCard.propTypes = {
+    title: PropTypes.string,
+    parameter: PropTypes.string,
+    icon: PropTypes.string,
+    measurement: PropTypes.string,
+    suggest: PropTypes.string,
+};
 
 export default InformationCard;
