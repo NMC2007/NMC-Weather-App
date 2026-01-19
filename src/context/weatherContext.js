@@ -10,27 +10,40 @@ function ProviderWeatherData({ children }) {
     const [dataForecast, setDataForecast] = useState([]);
     const [cityName, setCityName] = useState('Ha noi');
 
-    const path = 'c385bf013ab54351d57c2493b91862b4';
-
     useEffect(() => {
         let isMounted = true;
 
         // func gọi api và truyền vào key và tên thành phố
         const getWeather = () => {
             // gọi api nhận về weather data trong ngày
-            fetchWeatherAPI(path, cityName).then((data) => {
-                const wtData = adapterWtData(data);
-                if (isMounted) {
-                    setDataWeather({ ...wtData });
+            fetchWeatherAPI(cityName).then((data) => {
+                // component đã unmount thì thôi
+                if (!isMounted) return;
+
+                // KIỂM TRA LỖI Ở ĐÂY
+                if (!data) {
+                    alert(`Không tìm thấy thông tin thời tiết cho thành phố: ${cityName}`);
+                    // Có thể reset cityName về mặc định nếu muốn, hoặc giữ nguyên để user sửa
+                    return; // Dừng lại, không chạy dòng adapter ở dưới nữa -> Không crash
                 }
+
+                const wtData = adapterWtData(data);
+                setDataWeather({ ...wtData });
             });
 
             // gọi api dự báo
-            fetchForecastAPI(path, cityName).then((data) => {
-                const FcData = adapterForecast(data);
-                if (isMounted) {
-                    setDataForecast([...FcData]);
+            fetchForecastAPI(cityName).then((data) => {
+                if (!isMounted) return;
+
+                // KIỂM TRA LỖI TƯƠNG TỰ
+                if (!data) {
+                    // Không cần alert lần 2 nếu api weather ở trên đã alert rồi
+                    // Hoặc console.log nhẹ nhàng thôi
+                    return;
                 }
+
+                const FcData = adapterForecast(data);
+                setDataForecast([...FcData]);
             });
         };
 

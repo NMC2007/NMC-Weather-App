@@ -15,6 +15,7 @@ function Search() {
     const handleSearch = () => {
         if (!value.trim()) return;
         setCityName(value);
+        setValue('');
     };
 
     const handleKeyDown = (e) => {
